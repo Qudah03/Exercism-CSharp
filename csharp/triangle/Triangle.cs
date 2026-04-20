@@ -10,17 +10,6 @@ public static class Triangle
         // Triangle inequality
         return (a + b >= c) && (a + c >= b) && (b + c >= a);
     }
-    private static bool HasLength(double side1, double side2, double side3)
-    {
-        if (side1 <= 0 || side2 <= 0 || side3 <= 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
     public static bool IsScalene(double side1, double side2, double side3)
     {
         // 1. Validation check - return false, don't throw
