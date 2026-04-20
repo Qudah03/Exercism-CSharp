@@ -16,3 +16,19 @@ static class Badge
         }
     }
 }
+
+/*
+public static class Badge
+{
+    public static string Print(int? id, string name, string? department)
+    {
+        // If ID is null, use empty string. Otherwise, format it with brackets and dash.
+        string idPart = id == null ? "" : $"[{id}] - ";
+        
+        // If department is null, use "OWNER". Otherwise, make it uppercase.
+        string deptPart = (department ?? "OWNER").ToUpper();
+
+        return $"{idPart}{name} - {deptPart}";
+    }
+}
+*/
