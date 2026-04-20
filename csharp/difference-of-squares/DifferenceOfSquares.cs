@@ -20,3 +20,28 @@ public static class DifferenceOfSquares
        return CalculateSquareOfSum(max) - CalculateSumOfSquares(max);
     }
 }
+
+/*
+using System;
+
+public static class DifferenceOfSquares
+{
+    public static int CalculateSquareOfSum(int max)
+    {
+        // Formula for sum of 1 to n: (n * (n + 1)) / 2
+        int sum = (max * (max + 1)) / 2;
+        return sum * sum;
+    }
+
+    public static int CalculateSumOfSquares(int max)
+    {
+        // Formula for sum of squares: (n * (n + 1) * (2n + 1)) / 6
+        return (max * (max + 1) * (2 * max + 1)) / 6;
+    }
+
+    public static int CalculateDifferenceOfSquares(int max)
+    {
+        return CalculateSquareOfSum(max) - CalculateSumOfSquares(max);
+    }
+}
+*/
