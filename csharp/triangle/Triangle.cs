@@ -1,38 +1,46 @@
+using System.Runtime.CompilerServices;
+
 public static class Triangle
 {
-    public static bool IsScalene(double side1, double side2, double side3)
+    private static bool IsValid(double a, double b, double c)
     {
-        if (side1 != side2 && side2 != side3 && side1 != side3)
-        {
-            return true;
-        }
-        else
+        // All sides must be positive
+        if (a <= 0 || b <= 0 || c <= 0) return false;
+        
+        // Triangle inequality
+        return (a + b >= c) && (a + c >= b) && (b + c >= a);
+    }
+    private static bool HasLength(double side1, double side2, double side3)
+    {
+        if (side1 <= 0 || side2 <= 0 || side3 <= 0)
         {
             return false;
         }
+        else
+        {
+            return true;
+        }
+    }
+    public static bool IsScalene(double side1, double side2, double side3)
+    {
+        // 1. Validation check - return false, don't throw
+        if (!IsValid(side1, side2, side3)) return false;
+
+        // 2. Scalene logic
+        return side1 != side2 && side2 != side3 && side1 != side3;
     }
 
     public static bool IsIsosceles(double side1, double side2, double side3) 
     {
-        if (side1 == side2 || side2 == side3 || side1 == side3)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        if (!IsValid(side1, side2, side3)) return false;
+        
+        return side1 == side2 || side2 == side3 || side1 == side3;
     }
 
     public static bool IsEquilateral(double side1, double side2, double side3) 
     {
-        if (side1 == side2 && side2 == side3)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+        if (!IsValid(side1, side2, side3)) return false;
+
+        return side1 == side2 && side2 == side3;
+}
 }
